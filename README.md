@@ -1,22 +1,19 @@
-# SnifferIH
+# Interceptador de paquetes
 
-Injectable DLL that captures any traffic made by the application it has been injected to.
+Dll injectable que captura y modifica los paquetes que son enviados desde una aplicacion. Diseñado para aplicaciones de 32 bits.
 
-The traffic captured gets wrote in files inside the Send and Recv directories created by the DLL.
+El trafico capturado se imprime en una consola.
 
 
 ## Details
 
-The DLL uses hooking on the process it gets injected in, which is implemented on the `ws2_32.dll` `send` and `recv` in order to capture every packet sent and received.
+Este Dll inicializa un hook a las librerias wsock32.dll para interceptar los paquetes utilizados por la aplicacion
 
-`ws2_32.dll` is the main DLL any recent Windows OS uses in order to transmit data over any protocol.
-Since this DLL is the main public "gate" user mode applications use to ask the kernel to transmit data, it doesn't matter what kind of networking library the target executable uses, since the request will always end up in those hooked points.
+por defecto wsock32.dll es la libreria principal utilizada por Windows para la transmicion de paquetes
+Toda aplicacion que utilize esta puerta de comunicacion y llame a esta libreria sera interceptada.
 
-While it's true that an application can use the older networking API (`ws2_32.dll`) which Windows provides for retro compatibility, on newer OSes it just ends up calling the new API, so the DLL will cover it aswell.
+Este capturador de paquetes puede trabajar con la libreria winsock32.dll que es utilizada por  aplicaciones mas antiguas.
 
+Se probo el interceptar paquetes que utilicen RECV los cuales son los que recibe la aplicacion y los paquetes SEND que envia la aplicacion
 
-## TODO
-
-Add some other protocol functions such as WSASend and WSARecv and possibly sniffing on some connecting and binding ones.
-
-You can however modify the DLL source code yourself, including new functions or changing the code applied on the hooks trampolines set up already.
+Permite capturar y modificar los paquetes. Tiene algunos filtros para capturar paquetes especificos definidos por el usuario y transforma los datos de data a hexadecimal para un trabajo mas simple.
