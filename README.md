@@ -2,7 +2,7 @@
 
 Dll injectable que captura y modifica los paquetes que son enviados desde una aplicacion. Diseñado para aplicaciones de 32 bits.
 
-El trafico capturado se imprime en una consola.
+El trafico capturado se imprime en consola.
 
 
 ## Detalles.
