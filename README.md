@@ -1,11 +1,11 @@
-# Interceptador de paquetes
+# Camputador de paquetes
 
 Dll injectable que captura y modifica los paquetes que son enviados desde una aplicacion. Diseñado para aplicaciones de 32 bits.
 
 El trafico capturado se imprime en una consola.
 
 
-## Details
+## Detalles.
 
 Este Dll inicializa un hook a las librerias wsock32.dll para interceptar los paquetes utilizados por la aplicacion
 
