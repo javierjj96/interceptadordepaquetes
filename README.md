@@ -9,7 +9,7 @@ El trafico capturado se imprime en consola.
 
 Este Dll inicializa un hook a las librerias wsock32.dll para interceptar los paquetes utilizados por la aplicacion
 
-por defecto wsock32.dll es la libreria principal utilizada por Windows para la transmicion de paquetes
+por defecto wsock32.dll es la libreria principal utilizada por Windows para la transmicion de paquete.
 Toda aplicacion que utilize esta puerta de comunicacion y llame a esta libreria sera interceptada.
 
 Este capturador de paquetes puede trabajar con la libreria winsock32.dll que es utilizada por  aplicaciones mas antiguas.
