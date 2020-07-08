@@ -1,4 +1,4 @@
-# Camputador de paquetes
+# Capturador de paquetes
 
 Dll injectable que captura y modifica los paquetes que son enviados desde una aplicacion. Diseñado para aplicaciones de 32 bits.
 
